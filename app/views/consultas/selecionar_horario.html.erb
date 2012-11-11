@@ -1,0 +1,43 @@
+<div style="text-align:center">
+<h1>Selecionar Horário</h1>
+<hr>
+<%= link_to "Voltar para página do calendário", root_path %>
+	<div class="pagina_agenda">
+		<h2>
+			<%= I18n.l @data, :format => "%B" %>
+			<br/>
+			<% date = @data.yesterday %>
+			<%= link_to "<", selecionar_horario_consultas_path(:dia => date.day, :mes => date.month, :ano => date.year) %>
+			<%= I18n.l @data, :format => "%d" %>
+			<% date = @data.tomorrow %>
+			<%= link_to ">", selecionar_horario_consultas_path(:dia => date.day, :mes => date.month, :ano => date.year) %>
+		</h2>
+		<h4><%= I18n.l @data, :format => "%A" %></h4>
+		<% if Consulta.data_valida(@data) %>
+			<table class="table table-bordered table-striped">
+				<tbody>	
+					<% @horarios.each do |horario| %>
+					<tr>
+						<td style="width:30px"><%= horario %></td>
+						<% hora = horario.split(":") %>
+						<% datahora = DateTime.new(@data.year,@data.month,@data.day, hora[0].to_i, hora[1].to_i) %>
+						<% if Consulta.horario_disponivel(datahora) %>
+							<td><%= link_to "Clique aqui para marcar uma consulta nesse horário", new_consulta_path(:data => datahora) %></td>
+						<% else %>
+							<% if current_user %>
+								<% datahora = DateTime.new(datahora.year,datahora.month,datahora.day, ((datahora.hour) + 3), datahora.minute) %>
+								<% consulta = Consulta.where(:data => datahora).first %>
+								<td><%= link_to consulta.nome_paciente, consulta %></td>
+							<% else %>
+								<td>OCUPADO</td>
+							<% end %>
+						<% end %>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>			
+		<% else %>
+			<p>Não abrimos nesse dia.</p>
+		<% end %>
+	</div>
+</div>

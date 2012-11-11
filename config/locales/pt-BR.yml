@@ -1,0 +1,186 @@
+pt-BR:
+  # formatos de data e hora
+  date:
+    day_names: [DOMINGO, SEGUNDA, TERÇA, QUARTA, QUINTA, SEXTA, SÁBADO]
+    abbr_day_names: [DOM, SEG, TER, QUA, QUI, SEX, SÁB]
+    month_names: [~, JANEIRO, FEVEREIRO, MARÇO, ABRIL, MAIO, JUNHO, JULHO, AGOSTO, SETEMBRO, OUTUBRO, NOVEMBRO, DEZEMBRO]
+    abbr_month_names: [~, JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ]
+     #formats:
+     #  default: "%d/%m/%Y"
+     #  short: "%d DE %B"
+     #  long: "%d DE %B DE %Y"
+
+
+  time:
+    day_names: [DOMINGO, SEGUNDA, TERÇA, QUARTA, QUINTA, SEXTA, SÁBADO]
+    abbr_day_names: [DOM, SEG, TER, QUA, QUI, SEX, SÁB]
+    month_names: [~, JANEIRO, FEVEREIRO, MARÇO, ABRIL, MAIO, JUNHO, JULHO, AGOSTO, SETEMBRO, OUTUBRO, NOVEMBRO, DEZEMBRO]
+    abbr_month_names: [~, JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ]
+    formats:
+      default: "%A, %d DE %B DE %Y, %H:%M h"
+      short: "%d/%m, %H:%M h"
+      short_without_hours: "%d/%m/%Y"
+      long: "%A, %d DE %B DE %Y, %H:%M h"
+      # long_without_hours: %d DE %B DE %Y
+    am: ''
+    pm: ''
+   
+  # distancia do tempo em palavras
+  datetime:
+    distance_in_words:
+      half_a_minute: 'meio minuto'
+      less_than_x_seconds:
+        one: 'menos de 1 segundo'
+        other: 'menos de %{count} segundos'
+
+      x_seconds:
+        one: '1 segundo'
+        other: '%{count} segundos'
+
+      less_than_x_minutes:
+        one: 'menos de um minuto'
+        other: 'menos de %{count} minutos'
+
+      x_minutes:
+        one: '1 minuto'
+        other: '%{count} minutos'
+
+      about_x_hours:
+        one: 'aproximadamente 1 hora'
+        other: 'aproximadamente %{count} horas'
+
+      x_days:
+        one: '1 dia'
+        other: '%{count} dias'
+
+      about_x_months:
+        one: 'aproximadamente 1 mês'
+        other: 'aproximadamente %{count} meses'
+
+      x_months:
+        one: '1 mês'
+        other: '%{count} meses'
+
+      about_x_years:
+        one: 'aproximadamente 1 ano'
+        other: 'aproximadamente %{count} anos'
+
+      over_x_years:
+        one: 'mais de 1 ano'
+        other: 'mais de %{count} anos'
+
+      almost_x_years:
+        one: 'quase 1 ano'
+        other: 'quase %{count} anos'
+
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundos"
+
+  # numeros
+  number:
+    format:
+      precision: 3
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: 'R$'
+        precision: 2
+        format: '%u %n'
+        separator: ','
+        delimiter: '.'
+    percentage:
+      format:
+        delimiter: '.'
+    precision:
+      format:
+        delimiter: '.'
+    human:
+      format:
+        precision: 2
+        delimiter: '.'
+        significant: true
+        strip_unsignificant_zeros: true
+      # number_to_human_size()
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      # number_to_human()
+      # new in rails 3: please add to other locales
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "mil"
+          million:
+            one: milhão
+            other: milhões
+          billion:
+            one: bilhão
+            other: bilhões
+          trillion:
+            one: trilhão
+            other: trilhões
+          quadrillion:
+            one: quatrilhão
+            other: quatrilhões
+
+  # Usado no Array.to_sentence
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " e "
+      last_word_connector: " e "
+
+  # devise
+  devise:
+    failure:
+      user:
+        unauthenticated: "Você precisa estar logado."
+    registrations:
+      user:
+        signed_up: "Cadastro feito com sucesso."
+
+  # ActiveRecord
+  activerecord:
+    models:
+      curso: Curso
+    attributes:
+      consulta:
+        convenio_id: Convênio
+        nome_paciente: Nome
+        endereco_paciente: Endereço
+        cep_paciente: CEP
+        idade_paciente: Idade
+        email_paciente: E-mail
+        codigo_carteirinha_paciente: Código da Carteirinha
+        data: Data e hora da consulta
+    errors:
+      template:
+        header:
+          one: "Não foi possível gravar %{model}: 1 erro"
+          other: "Não foi possível gravar %{model}: %{count} erros."
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+      messages:
+        record_invalid: "A validação falhou: %{errors}"
+      models:
+        consulta:
+          attributes:
+            data:
+              taken: "Esse Horário já está ocupado"
+              not_a_saturday: "Infelizmente só atendemos aos sábados, das 8:30 às 16hs"
+              not_on_schedule: "Infelizmente só atendemos aos sábados, das 8:30 às 16hs"
+            nome_paciente:
+              blank: "O nome do paciente deve ser preenchido"

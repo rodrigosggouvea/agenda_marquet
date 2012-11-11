@@ -1,0 +1,22 @@
+<h1>Listagem de Consultas</h1>
+<br/>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Data</th>
+			<th>Hora</th>
+			<th>Nome do Paciente</th>
+			<th>Convênio</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <% @consultas.each do |consulta| %>
+	  <tr>
+	  	<td><%= consulta.somente_data %></td>
+	  	<td><%= consulta.hora %></td>
+	  	<td><%= consulta.nome_paciente %></td>
+	  	<td><%= consulta.convenio.nome %></td>
+	  </tr>
+	  <% end %>
+	</tbody>
+</table>

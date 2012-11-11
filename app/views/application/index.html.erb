@@ -1,0 +1,34 @@
+<div style="text-align:center">
+  <h1>Bem-vindo!</h1>
+  <h4>Para agendar uma consulta, clique no link da data desejada no calendário</h4>
+  <hr>
+</div>
+<div id="calendar">
+  <h2 id="month">
+    <%= link_to "<", root_path(:month => (@hoje.beginning_of_month-1).strftime("%Y-%m-01")) %>
+    <%= I18n.l @hoje, :format => "%B DE %Y" %>
+    <%= link_to ">", root_path(:month => (@hoje.end_of_month+1).strftime("%Y-%m-01")) %>
+  </h2>
+  <%= calendar_for @consultas, :year => @hoje.year, :month => @hoje.month do |calendar| %>
+    <%= calendar.head('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado') %>
+    <% calendar.day(:day_method => :data) do |date, consultas| %>
+      <% if Consulta.data_valida(date) %>
+        <%= date.day %>
+        <%= link_to selecionar_horario_consultas_path(:dia => date.day, :mes => date.month, :ano => date.year) do %>
+          <br/>
+          <span style="font-size:12px">
+          <% if Consulta.horarios_disponiveis(date).any? %>
+            HORÁRIOS DISPONÍVEIS
+          <% else %>
+            DIA OCUPADO
+          <% end %>
+          </span>
+        <% end %>
+      <% else %>
+        <span style="color:#cccccc">
+          <%= date.day %>
+        </span>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

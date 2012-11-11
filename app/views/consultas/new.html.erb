@@ -1,0 +1,65 @@
+<div class="row">
+	<h1>Nova Consulta</h1>
+	<hr>
+	<div class="span12 criar_consulta">
+		<%= link_to "Voltar para listagem de horarios", selecionar_horario_consultas_path(:dia =>  params[:data].to_datetime.day, :mes =>  params[:data].to_datetime.month, :ano =>  params[:data].to_datetime.year) %>
+		<%= form_for(@consulta) do |f| %>
+  		<%= f.hidden_field :data, :value => params[:data] %>
+  		<h4>Você selecionou <%= I18n.l(params[:data].to_datetime) %>.</h4>
+  		<h4>Deseja agendar uma consulta nessa data?</h4>
+  		<%= label_tag :marcar, "Sim", :style => "display:inline", :class => "radio_toggle" %>	
+  		<%= radio_button_tag :marcar, "sim", :style => "display:inline", :class => "radio_toggle" %>&nbsp
+  		<%= label_tag :marcar, "Não", :style => "display:inline", :class => "radio_toggle" %>	
+  		<%= radio_button_tag :marcar, "não", :style => "display:inline", :class => "radio_toggle" %>	
+  		<div id="form_consulta" style="display:none">
+  		<br>
+			<% if @consulta.errors[:data].any? %>
+				<%= @consulta.errors[:data].first %>
+			<% end %>
+			<%= f.label :nome_paciente %>
+			<%= f.text_field :nome_paciente %>                                      
+			<% if @consulta.errors[:nome_paciente].any? %>
+				<%= @consulta.errors[:nome_paciente].first %>
+			<% end %>
+			</br>
+			<%= f.label :endereco_paciente %>
+			<%= f.text_field :endereco_paciente %>
+			<% if @consulta.errors[:endereco_paciente].any? %>
+				<%= @consulta.errors[:endereco_paciente].first %>
+			<% end %>
+			</br>
+			<%= f.label :cep_paciente %>
+			<%= f.text_field :cep_paciente %>
+			<% if @consulta.errors[:cep_paciente].any? %>
+				<%= @consulta.errors[:cep_paciente].first %>
+			<% end %>
+			</br>
+			<%= f.label :idade_paciente %>
+			<%= f.text_field :idade_paciente %>
+			<% if @consulta.errors[:idade_paciente].any? %>
+				<%= @consulta.errors[:idade_paciente].first %>
+			<% end %>
+			</br>
+			<%= f.label :convenio_id %>
+			<%= f.select :convenio_id, @convenios %>
+			<% if @consulta.errors[:convenio_id].any? %>
+				<%= @consulta.errors[:convenio_id].first %>
+			<% end %>
+			</br>
+			<%= f.label :codigo_carteirinha_paciente %>
+			<%= f.text_field :codigo_carteirinha_paciente %>
+			<% if @consulta.errors[:codigo_carteirinha_paciente].any? %>
+				<%= @consulta.errors[:codigo_carteirinha_paciente].first %>
+			<% end %>
+			</br>
+			<%= f.label :email_paciente %>
+			<%= f.text_field :email_paciente %>
+			<% if @consulta.errors[:email_paciente].any? %>
+				<%= @consulta.errors[:email_paciente].first %>
+			<% end %>
+			</br>
+			<%= f.submit "Salvar", :class => "btn btn-large btn-primary" %>
+  		</div>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Clínica Odontológica Marquet</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= stylesheet_link_tag    "style", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body class="body">
+    <nav class="navbar">
+    <!-- <nav class="navbar" style="position: fixed; width: 100%"> -->
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="nav-collapse">
+            <%= link_to root_path do %>
+              <%= image_tag "logo.png" %>
+            <% end %>
+            <ul class="nav" style="float: right !important">
+              <li><%= link_to "Agendar Consulta", root_path %></li>
+              <li><%= link_to "Convênios", convenios_path %></li>
+              <li><%= link_to "Contato", contato_path %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="container-branco">
+      <% if notice %>
+        <div class="alert alert-success"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-error"><%= alert %></div>
+      <% end %>
+      <%= yield %>     
+      <br>         
+      </div>
+      <footer style="text-align: center">
+        Clinica Marquet© 2012 - Todos os direitos reservados<br/>
+        Rua Pereira dos Santos, n° 260 - Sala 104 - Centro - Itaboraí - (21)3585-5744 - (21)3244-4553
+        <p style="font-size:10px">
+          Desenvolvido por <%= mail_to "rodrigosggouvea@gmail.com", "Rodrigo Gouvêa" %>
+        </p>
+      </footer>
+    </div>
+    <br>
+    <br>
+	</body>
+</html>
