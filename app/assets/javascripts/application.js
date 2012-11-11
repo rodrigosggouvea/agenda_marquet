@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require jquery.orbit-1.2.3.min
 //= require rails.validations
 //= require_tree .
 
