@@ -1,12 +1,18 @@
 <script type="text/javascript">
-      $(function() {
-          $('#featured').slider();
-      });
+  $(document).ready(function() { 
+    // $('#carousel').carousel();
+    $('#carousel').orbit();
+  });
 </script>
-<div id="featured"> 
-  <%= image_tag "carroussel1.png" %>
-  <%= image_tag "carroussel2.png" %>
-  <%= image_tag "carroussel3.png" %>
+<div id="carousel">
+  <!-- <ul> -->
+    <!-- <li><%#= image_tag "carroussel1.png" %></li> -->
+    <!-- <li><%#= image_tag "carroussel2.png" %></li> -->
+    <!-- <li><%#= image_tag "carroussel3.png" %></li> -->
+    <%= image_tag "carroussel1.png" %>
+    <%= image_tag "carroussel2.png" %>
+    <%= image_tag "carroussel3.png" %>
+  <!-- </ul> -->
 </div>
 <div style="text-align:center">
   <h1>Bem-vindo!</h1>
