@@ -1,16 +1,25 @@
 <script type="text/javascript">
   $(document).ready(function() { 
-    $('div#carousel').carousel();
-    // $('#carousel').orbit();
+   $('.carousel').carousel();
   });
 </script>
-<!-- <div id="carousel">
-  <ul>
-    <li><%#= image_tag "carroussel1.png" %></li>
-    <li><%#= image_tag "carroussel2.png" %></li>
-    <li><%#= image_tag "carroussel3.png" %></li>
-  </ul>
-</div> -->
+<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+  <div class="carousel-inner">
+    <div class="item active"><!-- class of active since it's the first item -->
+      <%= image_tag "carroussel1.png" %>
+    </div>
+    <div class="item">
+      <%= image_tag "carroussel2.png" %>
+    </div>
+    <div class="item">
+      <%= image_tag "carroussel3.png" %>
+    </div>
+  </div><!-- /.carousel-inner -->
+  <!--  Next and Previous controls below
+        href values must reference the id for this carousel -->
+    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev"> &lsaquo;</a>
+    <a class="carousel-control right" href="#this-carousel-id" data-slide="next"> &rsaquo;</a>
+</div><!-- /.carousel -->
 <div style="text-align:center">
   <h4>Para agendar uma consulta, clique no link da data desejada no calendário</h4>
   <hr>
