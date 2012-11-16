@@ -3,23 +3,33 @@
    $('.carousel').carousel();
   });
 </script>
-<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
-  <div class="carousel-inner">
-    <div class="item active"><!-- class of active since it's the first item -->
-      <%= image_tag "carroussel1.png" %>
-    </div>
-    <div class="item">
-      <%= image_tag "carroussel2.png" %>
-    </div>
-    <div class="item">
-      <%= image_tag "carroussel3.png" %>
-    </div>
-  </div><!-- /.carousel-inner -->
-  <!--  Next and Previous controls below
-        href values must reference the id for this carousel -->
-    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev"> &lsaquo;</a>
-    <a class="carousel-control right" href="#this-carousel-id" data-slide="next"> &rsaquo;</a>
-</div><!-- /.carousel -->
+<div class="row">
+  <div class="span6 offset3">
+    <div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+      <div class="carousel-inner">
+        <div class="item active"><!-- class of active since it's the first item -->
+          <%= image_tag "SDC12921.JPG" %>
+        </div>
+        <div class="item">
+          <%= image_tag "SDC12919.JPG" %>
+        </div>
+        <div class="item">
+          <%= image_tag "SDC12918.JPG" %>
+        </div>
+        <div class="item">
+          <%= image_tag "SDC12925.JPG" %>
+        </div>
+        <div class="item">
+          <%= image_tag "SDC12935.JPG" %>
+        </div>
+      </div><!-- /.carousel-inner -->
+      <!--  Next and Previous controls below
+            href values must reference the id for this carousel -->
+        <a class="carousel-control left" href="#this-carousel-id" data-slide="prev"> &lsaquo;</a>
+        <a class="carousel-control right" href="#this-carousel-id" data-slide="next"> &rsaquo;</a>
+    </div><!-- /.carousel -->
+  </div>
+</div>
 <div style="text-align:center">
   <h4>Para agendar uma consulta, clique no link da data desejada no calendário</h4>
   <hr>
