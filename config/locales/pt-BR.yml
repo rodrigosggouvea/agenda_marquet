@@ -149,6 +149,7 @@ pt-BR:
     failure:
       user:
         unauthenticated: "Você precisa estar logado."
+        already_authenticated: "Você já está logado."
     registrations:
       user:
         signed_up: "Cadastro feito com sucesso."
