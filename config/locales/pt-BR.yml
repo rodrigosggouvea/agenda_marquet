@@ -159,16 +159,17 @@ pt-BR:
   # ActiveRecord
   activerecord:
     models:
-      curso: Curso
+      consulta: Consulta
     attributes:
       consulta:
-        convenio_id: Convênio
-        nome_paciente: Nome
+        convenio_id: Convênio*
+        nome_paciente: Nome*
         endereco_paciente: Endereço
-        cep_paciente: CEP
+        cpf_paciente: CPF*
         idade_paciente: Idade
         email_paciente: E-mail
-        codigo_carteirinha_paciente: Código da Carteirinha
+        codigo_carteirinha_paciente: Código da Carteirinha*
+        data_nascimento: Data de nascimento*
         data: Data e hora da consulta
     errors:
       template:

@@ -1189,6 +1189,7 @@ select:focus:required:invalid:focus {
 .help-block {
   display: block;
   margin-bottom: 10px;
+  font-size: 12px;
 }
 .help-inline {
   display: inline-block;

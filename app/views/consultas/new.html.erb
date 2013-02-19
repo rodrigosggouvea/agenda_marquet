@@ -1,5 +1,8 @@
 <script type="text/javascript">
-$(document).ready(function() {
+	$(document).ready(function() {
+		if ($("#marcar_sim").attr("checked") == "checked") {
+			$("#form_consulta").show();
+		};
 		$("#marcar_sim").click(function() {
 			$("#form_consulta").show();
 		});
@@ -32,6 +35,12 @@ $(document).ready(function() {
 				<%= @consulta.errors[:nome_paciente].first %>
 			<% end %>
 			</br>
+			<%= f.label :cpf_paciente %>
+			<%= f.text_field :cpf_paciente %>
+			<% if @consulta.errors[:cpf_paciente].any? %>
+				<%= @consulta.errors[:cpf_paciente].first %>
+			<% end %>
+			</br>
 			<%= f.label :data_nascimento %>
 			<%= f.text_field :data_nascimento %>                                      
 			 <span class="help-block">Ex. 01/05/1980</span>
@@ -49,12 +58,6 @@ $(document).ready(function() {
 			<%= f.text_field :cep_paciente %>
 			<% if @consulta.errors[:cep_paciente].any? %>
 				<%= @consulta.errors[:cep_paciente].first %>
-			<% end %>
-			</br>
-			<%= f.label :idade_paciente %>
-			<%= f.text_field :idade_paciente %>
-			<% if @consulta.errors[:idade_paciente].any? %>
-				<%= @consulta.errors[:idade_paciente].first %>
 			<% end %>
 			</br>
 			<%= f.label :convenio_id %>

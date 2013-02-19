@@ -9,7 +9,7 @@ class Consulta < ActiveRecord::Base
   validates :nome_paciente, :presence => true
   validates :data_nascimento, :presence => true, :format =>{:with => /\d{2}\/\d{2}\/\d{4}/}, :length => { :is => 10 }
   # validates :endereco_paciente, :presence => true
-  # validates :cep_paciente, :presence => true
+  validates :cpf_paciente, :presence => true
   # validates :idade_paciente, :presence => true
   # validates :email_paciente, :presence => true
   validates :codigo_carteirinha_paciente, :presence => true, :unless => "particular?"
