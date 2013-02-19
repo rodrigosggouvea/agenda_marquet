@@ -51,7 +51,7 @@ class Consulta < ActiveRecord::Base
   end
 
   def self.horario_valido(datahora)
-    datahora = DateTime.new(data.year,data.month,data.day, ((data.hour) + 3), data.minute)
+    datahora = DateTime.new(datahora.year,datahora.month,datahora.day, ((datahora.hour) + 3), datahora.minute)
     datahora >= DateTime.now
   end
 
