@@ -32,6 +32,13 @@ $(document).ready(function() {
 				<%= @consulta.errors[:nome_paciente].first %>
 			<% end %>
 			</br>
+			<%= f.label :data_nascimento %>
+			<%= f.text_field :data_nascimento %>                                      
+			 <span class="help-block">Ex. 01/05/1980</span>
+			<% if @consulta.errors[:data_nascimento].any? %>
+				<%= @consulta.errors[:data_nascimento].first %>
+			<% end %>
+			</br>
 			<%= f.label :endereco_paciente %>
 			<%= f.text_field :endereco_paciente %>
 			<% if @consulta.errors[:endereco_paciente].any? %>

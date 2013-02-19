@@ -187,5 +187,8 @@ pt-BR:
               taken: "Esse Horário já está ocupado"
               not_a_saturday: "Infelizmente só atendemos aos sábados, das 8:30 às 16hs"
               not_on_schedule: "Infelizmente só atendemos aos sábados, das 8:30 às 16hs"
+            data_nascimento:
+              blank: A data de nascimento deve ser preenchida
+              invalid: Formato inválido
             nome_paciente:
               blank: "O nome do paciente deve ser preenchido"

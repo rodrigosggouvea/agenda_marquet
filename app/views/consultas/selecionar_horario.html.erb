@@ -22,7 +22,11 @@
 						<% hora = horario.split(":") %>
 						<% datahora = DateTime.new(@data.year,@data.month,@data.day, hora[0].to_i, hora[1].to_i) %>
 						<% if Consulta.horario_disponivel(datahora) %>
+						<% if Consulta.horario_valido(datahora) %>
 							<td><%= link_to "Clique aqui para marcar uma consulta nesse horário", new_consulta_path(:data => datahora) %></td>
+						<% else %>
+							<td>HORÁRIO NÃO DISPONÍVEL</td>
+						<% end %>
 						<% else %>
 							<% if current_user %>
 								<% datahora = DateTime.new(datahora.year,datahora.month,datahora.day, ((datahora.hour) + 3), datahora.minute) %>

@@ -2,10 +2,11 @@
 <p>
 	Horário: <%= @consulta.data %><br/>
 	Nome do Paciente: <%= @consulta.nome_paciente %><br/>
+	Data de Nascimento do Paciente: <%= @consulta.data_nascimento %><br/>
 	Idade do Paciente: <%= @consulta.idade_paciente %><br/>
 	Convênio do Paciente: <%= @consulta.convenio.nome %><br/>
 	Código da Carteirinha: <%= @consulta.codigo_carteirinha_paciente %><br/>
 	Endereço do Paciente: <%= @consulta.endereco_paciente %><br/>
 	E-mail do Paciente: <%= @consulta.email_paciente %><br/>
 </p>
-<%= link_to "Apagar", @consulta, :method => :delete, :confirm => "Tem certeza?" %>
+<%= link_to "Desmarcar Consulta", @consulta, :method => :delete, :confirm => "Tem certeza?",:class => "btn btn-primary" %>
