@@ -153,6 +153,8 @@ pt-BR:
     registrations:
       user:
         signed_up: "Cadastro feito com sucesso."
+        signed_in: "Login feito com sucesso."
+        signed_out: Deslogado com sucesso
 
   # ActiveRecord
   activerecord:
