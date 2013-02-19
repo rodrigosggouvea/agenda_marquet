@@ -179,6 +179,8 @@ pt-BR:
       models:
         consulta:
           attributes:
+            codigo_carteirinha_paciente:
+              blank: O código da carteirinha deve ser preenchido 
             data:
               taken: "Esse Horário já está ocupado"
               not_a_saturday: "Infelizmente só atendemos aos sábados, das 8:30 às 16hs"

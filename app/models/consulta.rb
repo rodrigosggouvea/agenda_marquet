@@ -8,9 +8,9 @@ class Consulta < ActiveRecord::Base
   validates :data, :presence => true, :uniqueness => true
   validates :nome_paciente, :presence => true
   validates :endereco_paciente, :presence => true
-  validates :cep_paciente, :presence => true
-  validates :idade_paciente, :presence => true
-  validates :email_paciente, :presence => true
+  # validates :cep_paciente, :presence => true
+  # validates :idade_paciente, :presence => true
+  # validates :email_paciente, :presence => true
   validates :codigo_carteirinha_paciente, :presence => true, :unless => "particular?"
 
   def self.horarios_disponiveis(data = Date.today)
