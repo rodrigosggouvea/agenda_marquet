@@ -20,7 +20,7 @@ class Consulta < ActiveRecord::Base
   	while array.count < 3 do
   		horarios.each do |horario|
   			datahora = DateTime.new(data.year.to_i, data.month.to_i, data.day.to_i, horario[0..1].to_i, horario[3..4].to_i)
-  			if Consulta.where(:data => datahora) == [] # && datahora > DateTime.now && array.count < 5 && datahora.saturday?
+  			if Consulta.where(:data => datahora) == [] # && datahora > DateTime.now && array.count < 5 && !datahora.sunday?
 	  			array << [datahora.to_s[0..9],datahora.to_s[11..16]]
 	  		end
   		end
@@ -36,7 +36,7 @@ class Consulta < ActiveRecord::Base
     while true do
       horarios.each do |horario|
         datahora = DateTime.new(data.year.to_i, data.month.to_i, data.day.to_i, horario[0..1].to_i, horario[3..4].to_i)
-        if datahora.saturday? && Consulta.where(:data => datahora) == [] && datahora > DateTime.now
+        if !datahora.sunday? && Consulta.where(:data => datahora) == [] && datahora > DateTime.now
           return datahora
         end
       end
@@ -50,7 +50,7 @@ class Consulta < ActiveRecord::Base
   end
 
   def self.data_valida(data)
-    data.saturday? or data.friday? or data.monday?
+    (!data.sunday? && data >= Date.today)
   end
 
   def somente_data
