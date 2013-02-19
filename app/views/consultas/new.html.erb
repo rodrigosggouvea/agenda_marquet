@@ -58,6 +58,7 @@ $(document).ready(function() {
 			</br>
 			<%= f.label :codigo_carteirinha_paciente %>
 			<%= f.text_field :codigo_carteirinha_paciente, :size => "20" %>
+			 <span class="help-block">Digite os caracteres e espaços, caso hajam</span>
 			<% if @consulta.errors[:codigo_carteirinha_paciente].any? %>
 				<%= @consulta.errors[:codigo_carteirinha_paciente].first %>
 			<% end %>
