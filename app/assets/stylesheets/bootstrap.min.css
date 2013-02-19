@@ -781,7 +781,7 @@ input[type="color"],
 }
 input,
 textarea {
-  width: 210px;
+  width: 300px !important;
 }
 textarea {
   height: auto;

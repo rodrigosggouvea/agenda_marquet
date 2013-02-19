@@ -57,7 +57,7 @@ $(document).ready(function() {
 			<% end %>
 			</br>
 			<%= f.label :codigo_carteirinha_paciente %>
-			<%= f.text_field :codigo_carteirinha_paciente %>
+			<%= f.text_field :codigo_carteirinha_paciente, :size => "20" %>
 			<% if @consulta.errors[:codigo_carteirinha_paciente].any? %>
 				<%= @consulta.errors[:codigo_carteirinha_paciente].first %>
 			<% end %>
