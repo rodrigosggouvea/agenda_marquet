@@ -27,7 +27,10 @@
 							<% if current_user %>
 								<% datahora = DateTime.new(datahora.year,datahora.month,datahora.day, ((datahora.hour) + 3), datahora.minute) %>
 								<% consulta = Consulta.where(:data => datahora).first %>
-								<td><%= link_to consulta.nome_paciente, consulta %></td>
+								<td>
+									<%= link_to consulta.nome_paciente, consulta %>
+									<%= link_to "Desmarcar Consulta", consulta, :confirm => "Tem certeza?", :method => :delete %>
+								</td>
 							<% else %>
 								<td>OCUPADO</td>
 							<% end %>

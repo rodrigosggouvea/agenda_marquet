@@ -19,6 +19,7 @@
               <li><%= link_to "Agendar Consulta", root_path %></li>
               <li><%= link_to "Convênios", convenios_path %></li>
               <li><%= link_to "Contato", contato_path %></li>
+              
             </ul>
           </div>
         </div>
@@ -36,6 +37,12 @@
       <br>         
       </div>
       <footer style="text-align: center">
+        <% if current_user %>
+          <%= link_to "Deslogar", destroy_user_session_path %>
+        <% else %>
+          <%= link_to "Administração", new_user_session_path %>
+        <% end %>
+        <br/>
         Clinica Marquet© 2012 - Todos os direitos reservados<br/>
         Rua Dr. Pereira dos Santos, n° 260 - Sala 104 - Centro - Itaboraí - (21)3585-5744 - (21)3244-4553
         <p style="font-size:10px">
