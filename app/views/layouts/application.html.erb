@@ -38,7 +38,7 @@
       </div>
       <footer style="text-align: center">
         <% if current_user %>
-          <%= link_to "Deslogar", destroy_user_session_path %>
+          <%= link_to "Deslogar", destroy_user_session_path, :method => :delete %>
         <% else %>
           <%= link_to "Administração", new_user_session_path %>
         <% end %>
