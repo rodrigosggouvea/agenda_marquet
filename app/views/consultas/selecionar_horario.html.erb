@@ -29,7 +29,7 @@
 								<% consulta = Consulta.where(:data => datahora).first %>
 								<td>
 									<%= link_to consulta.nome_paciente, consulta %>
-									<%= link_to "Desmarcar Consulta", consulta, :confirm => "Tem certeza?", :method => :delete %>
+									<%= link_to "Desmarcar Consulta", consulta, :confirm => "Tem certeza?", :method => :delete, :class => "btn btn-primary", :style => "float:right" %>
 								</td>
 							<% else %>
 								<td>OCUPADO</td>
