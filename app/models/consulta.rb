@@ -69,7 +69,7 @@ class Consulta < ActiveRecord::Base
   end
 
   def particular?
-    self.convenio.nome == "PARTICULAR"
+    self.convenio.nome == "Particular"
   end
 end
 
