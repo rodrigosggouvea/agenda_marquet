@@ -162,15 +162,16 @@ pt-BR:
       consulta: Consulta
     attributes:
       consulta:
-        convenio_id: Convênio*
-        nome_paciente: Nome*
-        endereco_paciente: Endereço
-        cpf_paciente: CPF*
-        idade_paciente: Idade
-        email_paciente: E-mail
         codigo_carteirinha_paciente: Código da Carteirinha*
-        data_nascimento: Data de nascimento*
+        convenio_id: Convênio*
+        cpf_paciente: CPF*
         data: Data e hora da consulta
+        data_nascimento: Data de nascimento*
+        email_paciente: E-mail
+        endereco_paciente: Endereço
+        idade_paciente: Idade
+        nome_paciente: Nome*
+        telefone: Telefone*
     errors:
       template:
         header:

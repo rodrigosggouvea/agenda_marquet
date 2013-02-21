@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219140836) do
+ActiveRecord::Schema.define(:version => 20130221014948) do
 
   create_table "consultas", :force => true do |t|
     t.datetime "data"
     t.string   "nome_paciente"
-    t.integer  "cpf_paciente"
+    t.string   "cpf_paciente"
     t.integer  "convenio_id"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130219140836) do
     t.string   "codigo_carteirinha_paciente"
     t.string   "email_paciente"
     t.string   "data_nascimento"
+    t.string   "telefone"
   end
 
   create_table "convenios", :force => true do |t|

@@ -48,18 +48,25 @@
 				<%= @consulta.errors[:data_nascimento].first %>
 			<% end %>
 			</br>
-			<%= f.label :endereco_paciente %>
-			<%= f.text_field :endereco_paciente %>
-			<% if @consulta.errors[:endereco_paciente].any? %>
-				<%= @consulta.errors[:endereco_paciente].first %>
+			<%= f.label :telefone %>
+			<%= f.text_field :telefone %>
+			 <span class="help-block">Ex. (21)9999-9999 - sem espaços, só algarismos, parênteses e traço.</span>
+			<% if @consulta.errors[:telefone].any? %>
+				<%= @consulta.errors[:telefone].first %>
 			<% end %>
 			</br>
-			<%= f.label :cep_paciente %>
-			<%= f.text_field :cep_paciente %>
-			<% if @consulta.errors[:cep_paciente].any? %>
-				<%= @consulta.errors[:cep_paciente].first %>
-			<% end %>
-			</br>
+			<%#= f.label :endereco_paciente %>
+			<%#= f.text_field :endereco_paciente %>
+			<%# if @consulta.errors[:endereco_paciente].any? %>
+			<%#= @consulta.errors[:endereco_paciente].first %>
+			<%# end %>
+			<!-- </br> -->
+			<%#= f.label :cep_paciente %>
+			<%#= f.text_field :cep_paciente %>
+			<%# if @consulta.errors[:cep_paciente].any? %>
+				<%#= @consulta.errors[:cep_paciente].first %>
+			<%# end %>
+			<!-- </br> -->
 			<%= f.label :convenio_id %>
 			<%= f.select :convenio_id, @convenios %>
 			<% if @consulta.errors[:convenio_id].any? %>

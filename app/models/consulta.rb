@@ -1,15 +1,16 @@
 require 'date'
 class Consulta < ActiveRecord::Base
 	include ActiveModel::Validations
-  attr_accessible :convenio_id, :cpf_paciente, :data, :nome_paciente, :cep_paciente, :endereco_paciente, :idade_paciente, :email_paciente, :codigo_carteirinha_paciente, :data_nascimento
+  attr_accessible :convenio_id, :cpf_paciente, :data, :nome_paciente, :cep_paciente, :endereco_paciente, :idade_paciente, :email_paciente, :codigo_carteirinha_paciente, :data_nascimento, :telefone
   belongs_to :convenio
 
   validates :convenio_id, :presence => true
   validates :data, :presence => true, :uniqueness => true
   validates :nome_paciente, :presence => true
   validates :data_nascimento, :presence => true, :format =>{:with => /\d{2}\/\d{2}\/\d{4}/}, :length => { :is => 10 }
-  # validates :endereco_paciente, :presence => true
   validates :cpf_paciente, :presence => true
+  validates :telefone, :presence => true, :format =>{:with => /^\(\d{2,3}\)\d{4,5}-\d{4,5}$/}
+  # validates :endereco_paciente, :presence => true
   # validates :idade_paciente, :presence => true
   # validates :email_paciente, :presence => true
   validates :codigo_carteirinha_paciente, :presence => true, :unless => "particular?"
