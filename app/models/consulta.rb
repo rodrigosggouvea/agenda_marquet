@@ -56,8 +56,8 @@ class Consulta < ActiveRecord::Base
     datahora >= DateTime.now
   end
 
-  def self.data_valida(data)
-    (!data.sunday? && data >= Date.today)
+  def self.data_valida(data, current_user)
+    (!data.sunday? && (data >= Date.today || current_user))
   end
 
   def somente_data

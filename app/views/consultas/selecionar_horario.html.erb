@@ -13,7 +13,7 @@
 			<%= link_to ">", selecionar_horario_consultas_path(:dia => date.day, :mes => date.month, :ano => date.year) %>
 		</h2>
 		<h4><%= I18n.l @data, :format => "%A" %></h4>
-		<% if Consulta.data_valida(@data) %>
+		<% if Consulta.data_valida(@data, current_user) %>
 			<table class="table table-bordered table-striped">
 				<tbody>	
 					<% @horarios.each do |horario| %>

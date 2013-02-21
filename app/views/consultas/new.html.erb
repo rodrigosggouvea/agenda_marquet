@@ -3,11 +3,21 @@
 		if ($("#marcar_sim").attr("checked") == "checked") {
 			$("#form_consulta").show();
 		};
+		if ($("#consulta_convenio_id option:selected").text() == "Particular"){
+			$("#codigo_carteirinha").hide();
+		};
 		$("#marcar_sim").click(function() {
 			$("#form_consulta").show();
 		});
 		$("#marcar_n_o").click(function() {
 			$("#form_consulta").hide();
+		});
+		$("#consulta_convenio_id").change(function() {
+			if ($("#consulta_convenio_id option:selected").text() == "Particular"){
+				$("#codigo_carteirinha").hide();
+			} else {
+				$("#codigo_carteirinha").show();
+			};
 		});
 	});
 </script>
@@ -73,6 +83,7 @@
 				<%= @consulta.errors[:convenio_id].first %>
 			<% end %>
 			</br>
+			<div id="codigo_carteirinha">
 			<%= f.label :codigo_carteirinha_paciente %>
 			<%= f.text_field :codigo_carteirinha_paciente, :size => "20" %>
 			 <span class="help-block">Digite os caracteres e espaços, caso hajam</span>
@@ -80,6 +91,7 @@
 				<%= @consulta.errors[:codigo_carteirinha_paciente].first %>
 			<% end %>
 			</br>
+			</div>
 			<%= f.label :email_paciente %>
 			<%= f.text_field :email_paciente %>
 			<% if @consulta.errors[:email_paciente].any? %>

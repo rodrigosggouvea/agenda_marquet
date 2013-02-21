@@ -41,7 +41,7 @@
   <%= calendar_for @consultas, :year => @hoje.year, :month => @hoje.month do |calendar| %>
     <%= calendar.head('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado') %>
     <% calendar.day(:day_method => :data) do |date, consultas| %>
-      <% if Consulta.data_valida(date) %>
+      <% if Consulta.data_valida(date, current_user) %>
         <%= date.day %>
         <%= link_to selecionar_horario_consultas_path(:dia => date.day, :mes => date.month, :ano => date.year) do %>
           <br/>
